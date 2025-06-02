@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مكتب 007 للخدمات الرقمية | 007 Digital Services</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fb;
+      color: #333;
+      transition: direction 0.3s, text-align 0.3s;
+    }
+    header {
+      background-color: #000;
+      color: #00ffcc;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header h1 {
+      margin: 10px 0;
+      font-size: 2em;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background-color: #00ffcc;
+      border-radius: 50%;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lang-toggle {
+      margin-top: 10px;
+      cursor: pointer;
+      background: #00ffcc;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #00ffcc;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #000;
+      text-decoration: none;
+      padding: 15px;
+      display: block;
+    }
+    nav a:hover {
+      background-color: #e0f7f1;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    form {
+      display: grid;
+      gap: 10px;
+    }
+    input, textarea, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #00ffcc;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">007</div>
+    <h1 id="title">مكتب 007 للخدمات الرقمية</h1>
+    <button class="lang-toggle" onclick="toggleLanguage()">English</button>
+  </header>
+
+  <nav>
+    <a href="#about" id="nav-about">عن المكتب</a>
+    <a href="#services" id="nav-services">خدماتنا</a>
+    <a href="#register" id="nav-register">سجل معنا</a>
+    <a href="#contact" id="nav-contact">تواصل معنا</a>
+  </nav>
+
+  <section id="about">
+    <h2 id="about-title">عن المكتب</h2>
+    <p id="about-text">نحن مكتب 007 للخدمات الرقمية، نعمل كوسيط بين مندوبي التوصيل وشركة طلبات. نسعى لتقديم خدمة مميزة واحترافية في تسجيل ومتابعة المندوبين.</p>
+  </section>
+
+  <section id="services">
+    <h2 id="services-title">خدماتنا</h2>
+    <ul id="services-list">
+      <li>تسجيل المندوبين في شركة طلبات.</li>
+      <li>متابعة الأداء الأسبوعي والتقارير.</li>
+      <li>حل مشاكل التأخير والدعم الفني.</li>
+    </ul>
+  </section>
+
+  <section id="register">
+    <h2 id="register-title">سجل معنا</h2>
+    <form action="mailto:ahmedtantawe04@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="الاسم" placeholder="الاسم الكامل" required>
+      <input type="tel" name="الجوال" placeholder="رقم الجوال" required>
+      <input type="text" name="المدينة" placeholder="المدينة" required>
+      <input type="text" name="الهوية" placeholder="رقم الهوية / الإقامة" required>
+      <input type="text" name="واتساب" placeholder="رقم واتساب" required>
+      <textarea name="ملاحظات" placeholder="ملاحظات إضافية"></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2 id="contact-title">تواصل معنا</h2>
+    <p id="contact-whatsapp">رقم الواتساب: <strong>01203011261</strong></p>
+    <p id="contact-email">البريد الإلكتروني: <strong>ahmedtantawe04@gmail.com</strong></p>
+  </section>
+
+  <footer>
+    <p id="footer-text">&copy; 2025 مكتب 007 للخدمات الرقمية. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script>
+    let isArabic = true;
+    function toggleLanguage() {
+      isArabic = !isArabic;
+      document.documentElement.lang = isArabic ? 'ar' : 'en';
+      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      document.getElementById("title").innerText = isArabic ? "مكتب 007 للخدمات الرقمية" : "007 Digital Services Office";
+      document.querySelector(".lang-toggle").innerText = isArabic ? "English" : "العربية";
+      document.getElementById("nav-about").innerText = isArabic ? "عن المكتب" : "About Us";
+      document.getElementById("nav-services").innerText = isArabic ? "خدماتنا" : "Services";
+      document.getElementById("nav-register").innerText = isArabic ? "سجل معنا" : "Register";
+      document.getElementById("nav-contact").innerText = isArabic ? "تواصل معنا" : "Contact";
+
+      document.getElementById("about-title").innerText = isArabic ? "عن المكتب" : "About the Office";
+      document.getElementById("about-text").innerText = isArabic
+        ? "نحن مكتب 007 للخدمات الرقمية، نعمل كوسيط بين مندوبي التوصيل وشركة طلبات. نسعى لتقديم خدمة مميزة واحترافية في تسجيل ومتابعة المندوبين."
+        : "We are 007 Digital Services Office, a trusted intermediary between delivery drivers and Talabat. We strive to offer professional and high-quality support in registration and follow-up.";
+
+      document.getElementById("services-title").innerText = isArabic ? "خدماتنا" : "Our Services";
+      document.getElementById("services-list").innerHTML = isArabic ? `
+        <li>تسجيل المندوبين في شركة طلبات.</li>
+        <li>متابعة الأداء الأسبوعي والتقارير.</li>
+        <li>حل مشاكل التأخير والدعم الفني.</li>` : `
+        <li>Registering drivers in Talabat.</li>
+        <li>Weekly performance tracking and reports.</li>
+        <li>Support with delays and technical issues.</li>`;
+
+      document.getElementById("register-title").innerText = isArabic ? "سجل معنا" : "Register";
+      document.getElementById("contact-title").innerText = isArabic ? "تواصل معنا" : "Contact Us";
+      document.getElementById("contact-whatsapp").innerHTML = isArabic ? "رقم الواتساب: <strong>01203011261</strong>" : "WhatsApp: <strong>01203011261</strong>";
+      document.getElementById("contact-email").innerHTML = isArabic ? "البريد الإلكتروني: <strong>ahmedtantawe04@gmail.com</strong>" : "Email: <strong>ahmedtantawe04@gmail.com</strong>";
+      document.getElementById("footer-text").innerText = isArabic ? "© 2025 مكتب 007 للخدمات الرقمية. جميع الحقوق محفوظة." : "© 2025 007 Digital Services Office. All rights reserved.";
+    }
+  </script>
+</body>
+</html>
